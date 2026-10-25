@@ -1702,3 +1702,49 @@ button:focus-visible {
         transform: scale(1.04) !important;
     }
 }
+
+
+/* GLOBAL CARD HOVER RESTORE */
+/* Restore consistent hover feedback across cards and interactive elements. */
+.path-card,
+.project-card,
+.opportunity-link,
+.button,
+.nav-cta {
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        background-color 0.28s ease,
+        color 0.28s ease,
+        border-color 0.28s ease;
+}
+
+.path-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 14px 30px rgba(32, 40, 32, 0.12);
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 14px 30px rgba(32, 40, 32, 0.12);
+    border-color: rgba(32, 40, 32, 0.22);
+}
+
+.opportunity-link:hover {
+    transform: translateX(5px);
+}
+
+.button:hover,
+.nav-cta:hover {
+    transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .path-card,
+    .project-card,
+    .opportunity-link,
+    .button,
+    .nav-cta {
+        transition: none;
+    }
+}
