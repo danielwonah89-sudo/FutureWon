@@ -1672,3 +1672,33 @@ button:focus-visible {
         transform: none;
     }
 }
+
+
+/* STRONG HOVER FEEDBACK: visible even when reduced motion is enabled */
+.hero-art:hover {
+    transform: translateY(-6px) !important;
+    outline: 3px solid var(--clay);
+    outline-offset: 3px;
+    box-shadow: 0 22px 48px rgba(32, 40, 32, 0.24) !important;
+}
+
+.hero-art:hover .hero-image {
+    transform: scale(1.09) !important;
+    filter: saturate(1.12) brightness(1.03);
+}
+
+/* When reduced motion is preferred, keep the visual response but remove animation. */
+@media (prefers-reduced-motion: reduce) {
+    .hero-art,
+    .hero-art .hero-image {
+        transition: none !important;
+    }
+
+    .hero-art:hover {
+        transform: translateY(-4px) !important;
+    }
+
+    .hero-art:hover .hero-image {
+        transform: scale(1.04) !important;
+    }
+}
